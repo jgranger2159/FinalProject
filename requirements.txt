@@ -1,0 +1,5 @@
+flask
+six
+gunicorn
+nltk
+pandas

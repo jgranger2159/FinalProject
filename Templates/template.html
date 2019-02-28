@@ -29,10 +29,10 @@
           </p>
         </section>
   
-  <form action="/click">
-    Input review here:<br>
-    <input type="text" name=review><br>
-    <input type="submit" value="Submit">
+  <form action="/click" method="post">
+    Input review here: <br>
+    <input type="text" name="review"><br>
+    <input type="submit" value="submit">
   </form>
 
   <main class="container">
@@ -41,6 +41,8 @@
         Additionally, while the model is very accurate at predicting a "positive" or "negative" review (79%, high for semantics analysis), it does a pretty poor job of predicting the correct rating(52%, pretty mediocre). The model does not account for the length of the review. For instance, a 4 star review that is 100 words long may be incorrectly labeled as a 5 star review because of how the score tallies up. In the same way, a resoundingly positive but short 5 star review (e.g. "Excellent!") may be given a 4 star rating.
       </p>
     </section>
+
+
 </body>
 
 </html>
