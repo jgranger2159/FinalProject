@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Review Rating Predictor!</title>
+</head>
+
+<body>
+  <header>
+    <h1>Review Rating Predictor!</h1>
+  </header>
+
+  <main class="container">
+    <section id="All About This Project">
+      <p>The aim of this project was to create a model that could successfully predict the rating that a given review received. It is most suitable to be used with electronics reviews, which is what it was trained on.</p>
+      <p>This was done by using a large dataset of Amazon reviews of electronics, collected by Johns Hopkins University. The dataset contained "positive" reviews(4 and 5 stars) and "negative" reviews(1 and 2 stars). The data was
+        processed and tokenized with NLTK, the Natural Language Toolkit, and lemmatized with WordNet to help simplify calculations. The tokens were hashed into "positive" and "negative" sets, then put through a sigmoid function to obtain a "semantics score", between -1 and 1, that describes how weighted the word was toward being in positive or negative reviews.
+        These scores are all placed into a database with their corresponding token.
+      </p>
+    </section>
+    <main class="container">
+        <section id="How it works:">
+          <p>
+            Each review entered is run through a processor that will remove insignificant words(less than 2 letters), stop words(list obtained from NLTK), and lemmatized with NLTK's WordNet functionality. Then each token is compared to the database 
+            and the semantic score is summed up to create a number that describes how positive or negative the review is. This is then compared to the reviews that the model already knows and the prediction is given.
+          </p>
+        </section>
+  
+  <form action="/click">
+    Input review here:<br>
+    <input type="text" name=review><br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <main class="container">
+    <section id="Weaknesses of the Model">
+      <p>The largest and most glaring weakness of the model is the inability to predict 3 star ratings. The dataset that I was working with did not contain any 3 star ratings because they are "neutral", and therefore do not contribute to building the model. 
+        Additionally, while the model is very accurate at predicting a "positive" or "negative" review (79%, high for semantics analysis), it does a pretty poor job of predicting the correct rating(52%, pretty mediocre). The model does not account for the length of the review. For instance, a 4 star review that is 100 words long may be incorrectly labeled as a 5 star review because of how the score tallies up. In the same way, a resoundingly positive but short 5 star review (e.g. "Excellent!") may be given a 4 star rating.
+      </p>
+    </section>
+</body>
+
+</html>
